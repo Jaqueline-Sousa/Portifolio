@@ -5,51 +5,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
-        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <title>Area de Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Área de Login | Jaqueline</title>
 </head>
 
 <body>
 
     <main>
+        <!-- Vídeo de Fundo -->
+        <video autoplay muted loop id="video-fundo">
+            <source src="img/Bruxinha-login.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos em HTML5.
+        </video>
 
-        <section class="area-imagem-login">
-            
-        </section>
-
-        <form action="">
-            <div class="area-titulo">
-                <i class=""> </i>
-                <h1>Portifólio da Jaqueline</h1>
-            </div>
-
-
-            <div class="area-email">
-                <label for="email">Email</label>
-                <input type="email" id="email">
-            </div>
-            <div class="area-senha">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha">
-
-                <div class="lembrar-senha">
-                    <input type="checkbox" id="lembrar">
-                    <label for="lembrar">Lembrar-me</label>
-                    <a href="#">Esqueceu a senha?</a>
+        <!-- Container centralizado que segura a apresentação e o formulário lado a lado -->
+        <div class="login-container">
+            <!-- Texto de boas-vindas lateral -->
+            <section class="area-imagem-login">
+                <div class="texto-boas-vindas">
+                    <h2>Bem-vindo(a) de volta</h2>
+                    <p>Acesse o painel administrativo para gerenciar projetos e conteúdos do portfólio.</p>
                 </div>
-            </div>
+            </section>
 
-            <div class="area-botao">
-                <button>Acessar</button>
-                <a href="#"> Ainda não possui uma conta.</a>
-            </div>
+            <!-- Formulário de Login -->
+            <form action="" class="area-formulario">
+                <div class="area-titulo">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <h1>Portfólio da Jaqueline</h1>
+                    <span>Faça login para continuar</span>
+                </div>
 
-        </form>
+                <div class="area-input">
+                    <label for="email">Email</label>
+                    <div class="input-com-icone">
+                        <i class="fa-regular fa-envelope icone-esquerda"></i>
+                        <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                </div>
 
+                <div class="area-input">
+                    <label for="senha">Senha</label>
+                    <div class="input-com-icone">
+                        <i class="fa-solid fa-lock icone-esquerda"></i>
+                        <input type="password" id="senha" placeholder="••••••••" required>
+                        <i class="fa-regular fa-eye icone-direita" id="toggle-senha" title="Mostrar/Ocultar senha"></i>
+                    </div>
+
+                    <div class="lembrar-senha">
+                        <div class="checkbox-grupo">
+                            <input type="checkbox" id="lembrar">
+                            <label for="lembrar">Lembrar-me</label>
+                        </div>
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
+                </div>
+
+                <div class="area-botao">
+                    <a href="index.html" class="btn-acessar">Acessar</a>
+                    <a href="cadastro.html" class="link-cadastro">Ainda não possui uma conta? <strong>Cadastre-se</strong></a>
+                </div>
+                        
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 
-</body>
+    <!-- Script para mostrar/ocultar senha -->
+    <script>
+        const inputSenha = document.getElementById('senha');
+        const toggleSenha = document.getElementById('toggle-senha');
 
+        toggleSenha.addEventListener('click', () => {
+            const isPassword = inputSenha.type === 'password';
+            inputSenha.type = isPassword ? 'text' : 'password';
+
+            toggleSenha.classList.toggle('fa-eye');
+            toggleSenha.classList.toggle('fa-eye-slash');
+        });
+
+// Redirecionar para o portfólio ao enviar o formulário
+const formLogin = document.getElementById('form-login');
+    formLogin.addEventListener('submit', (evento) => {
+        evento.preventDefault(); // Evita que a página recarregue em branco
+        window.location.href = 'portifolio.html'; // Vai para o portfólio
+    });
+
+    </script>
+
+</body>
 </html>

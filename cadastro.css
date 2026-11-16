@@ -1,0 +1,248 @@
+@import url(style.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    /* Centraliza perfeitamente no meio vertical e horizontal */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Estilização e posicionamento do vídeo de fundo */
+#video-fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    object-fit: cover;
+}
+
+/* Camada escura suave por cima do vídeo para destacar o card central */
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.62);
+    z-index: -1;
+}
+
+/* Container centralizado */
+.cadastro-container {
+    width: 100%;
+    max-width: 430px;
+    z-index: 1;
+    margin-right: 30px;
+}
+
+/* Card do Formulário */
+.area-formulario {
+    width: 100%;
+    padding: 32px 30px;
+    border-radius: 20px;
+    background: rgba(20, 20, 22, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+    
+}
+
+/* Título e Ícone */
+.area-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.area-titulo i {
+    font-size: 1.8rem;
+    color: #d4af37;
+    margin-bottom: 6px;
+}
+
+.area-titulo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.area-titulo span {
+    font-size: 0.82rem;
+    color: #b0b0b0;
+}
+
+/* Campos do Formulário */
+.area-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 14px;
+    width: 100%;
+}
+
+.area-input label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.input-com-icone {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-com-icone .icone-esquerda {
+    position: absolute;
+    left: 14px;
+    color: #d4af37;
+    font-size: 0.95rem;
+    pointer-events: none;
+}
+
+.input-com-icone .icone-direita {
+    position: absolute;
+    right: 14px;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.input-com-icone .icone-direita:hover {
+    color: #d4af37;
+}
+
+.input-com-icone input {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    font-size: 0.92rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(30, 30, 35, 0.85);
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-com-icone input:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Checkbox Termos */
+.lembrar-senha {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    font-size: 0.8rem;
+}
+
+.checkbox-grupo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #cccccc;
+}
+
+.checkbox-grupo input[type="checkbox"] {
+    accent-color: #d4af37;
+    cursor: pointer;
+}
+
+/* Botão e Link de Login */
+.area-botao {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.area-botao button {
+    width: 100%;
+    padding: 11px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #d4af37, #f3d060);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.area-botao button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.link-cadastro {
+    font-size: 0.82rem;
+    color: #cccccc;
+    text-decoration: none;
+}
+
+.link-cadastro strong {
+    color: #d4af37;
+}
+
+.link-cadastro:hover strong {
+    text-decoration: underline;
+}
+
+
+main {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 20px;
+    overflow: hidden;
+    
+    /* Imagem de fundo aplicada diretamente no main */
+    background-image: url('img/bruxinha-cadastro.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Camada escura suave por cima da imagem para destacar o card central */
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 15, 15, 0.62);
+    z-index: 0;
+}
+
+/* Container centralizado */
+.cadastro-container {
+    width: 100%;
+    max-width: 430px;
+    z-index: 1;
+}
